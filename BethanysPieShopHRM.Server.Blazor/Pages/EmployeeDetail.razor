@@ -1,13 +1,13 @@
-﻿@page "/EmployeeDetail/{EmployeeId}"
+﻿@page "/employeedetail/{EmployeeId}"
 @inherits EmployeeDetailBase
+
 
 <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
 
 
 <div class="col-12 row">
     <div class="col-2">
-        <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")"
-             class="img-responsive rounded-circle employee-detail-img" />
+        <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")" class="img-responsive rounded-circle employee-detail-img" />
     </div>
     <div class="col-10 row">
         <div class="col-xs-12 col-sm-8">
@@ -30,6 +30,7 @@
                     <label type="text" readonly class="form-control-plaintext">@Employee.LastName</label>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Birthdate</label>
                 <div class="col-sm-8">
@@ -108,9 +109,6 @@
                     <label type="text" readonly class="form-control-plaintext">@Employee.ExitDate?.ToShortDateString()</label>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
-
