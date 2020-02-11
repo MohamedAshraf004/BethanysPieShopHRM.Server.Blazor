@@ -27,7 +27,7 @@ namespace BethanysPieShopHRM.Server.Blazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddServerSideBlazor().AddCircuitOptions(option=>{ option.DetailedErrors = true; });
+            services.AddServerSideBlazor().AddCircuitOptions(option=> option.DetailedErrors = true );
             
         }
 
