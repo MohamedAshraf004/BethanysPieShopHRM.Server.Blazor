@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BethanysPieShopHRM.Api\BethanysPieShopHRM.Api.csproj" />
     <ProjectReference Include="..\BethanysPieShopHRM.Shared\BethanysPieShopHRM.Shared.csproj" />
   </ItemGroup>
 
