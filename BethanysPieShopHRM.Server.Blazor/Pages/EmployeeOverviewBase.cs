@@ -1,4 +1,5 @@
-﻿using BethanysPieShopHRM.Server.Blazor.Services;
+﻿using BethanysPieShopHRM.Server.Blazor.Components;
+using BethanysPieShopHRM.Server.Blazor.Services;
 using BethanysPieShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -12,17 +13,28 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 	{
 		[Inject]
 		public IEmployeeDataService EmployeeDataService{ get; set; }
-		protected override async Task OnInitializedAsync()
+        public IEnumerable<Employee> Employees { get; set; }
+
+        public AddEmployeeDialogBase AddEmployeeDialog { get; set; }
+        protected override async Task OnInitializedAsync()
 		{
 			Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
 		}
-		public IEnumerable<Employee> Employees { get; set; }
+        protected void QuickAddEmployee()
+        {
+            AddEmployeeDialog.Show();
+        }
+        public async void AddEmployeeDialog_OnDialogClose()
+        {
+            Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
+            StateHasChanged();
+        }
 
-		private List<Country> Countries { get; set; }
-
-		private List<JobCategory> JobCategories { get; set; }
 
         #region MockData
+        //private List<Country> Countries { get; set; }
+
+        //private List<JobCategory> JobCategories { get; set; }
         //private void InitializeJobCategories()
         //{
         //	JobCategories = new List<JobCategory>()

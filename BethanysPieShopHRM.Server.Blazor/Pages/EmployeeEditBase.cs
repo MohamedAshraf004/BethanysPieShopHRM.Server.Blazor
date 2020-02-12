@@ -39,18 +39,22 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 			//Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
 			Countries = (await CountryDataService.GetAllCountries()).ToList();
 			JobCategories = (await JobCategoryDataService.GetAllJobCategories()).ToList();
+
+			CountryId = Employee.CountryId.ToString();
+			JobCategoryId = Employee.JobCategoryId.ToString();
+			
 			int.TryParse(EmployeeId,out var employeeId);
 			if(employeeId == 0)
 			{
-				Employee = new Employee() { CountryId = 1, JobCategoryId = 0, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+				Employee = new Employee()
+				{ CountryId = 1, JobCategoryId = 0, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
 
 			}
 			else
 			{
 				Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
 			}
-			CountryId = Employee.CountryId.ToString();
-			JobCategoryId = Employee.JobCategoryId.ToString();
+			
 		}
 
 		protected async Task HandleValidSubmit()
@@ -91,7 +95,7 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 		}
 		protected void NavigateToOverview()
 		{
-			NavigationManager.NavigateTo("/employeeoverview");
+			NavigationManager.NavigateTo($"/employeeoverview");
 		}
 
 	}
