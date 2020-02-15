@@ -12,14 +12,12 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
     {
 		[Inject]
 		public IEmployeeDataService EmployeeDataService { get; set; }
-
 		[Inject]
 		public ICountryDataService CountryDataService { get; set; }
 		[Inject]
 		public IJobCategoryDataService JobCategoryDataService { get; set; }
 		[Inject]
 		public NavigationManager NavigationManager { get; set; }
-
 		[Parameter]
 		public string EmployeeId { get; set; }
 		public Employee Employee { get; set; } = new Employee();
@@ -37,11 +35,8 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 		{
 			Saved = false;
 			//Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
-			Countries = (await CountryDataService.GetAllCountries()).ToList();
+			 Countries = (await CountryDataService.GetAllCountries()).ToList();
 			JobCategories = (await JobCategoryDataService.GetAllJobCategories()).ToList();
-
-			CountryId = Employee.CountryId.ToString();
-			JobCategoryId = Employee.JobCategoryId.ToString();
 			
 			int.TryParse(EmployeeId,out var employeeId);
 			if(employeeId == 0)
@@ -54,7 +49,9 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 			{
 				Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
 			}
-			
+
+			CountryId = Employee.CountryId.ToString();
+			JobCategoryId = Employee.JobCategoryId.ToString();
 		}
 
 		protected async Task HandleValidSubmit()
@@ -97,7 +94,5 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 		{
 			NavigationManager.NavigateTo($"/employeeoverview");
 		}
-
 	}
-
 }

@@ -2,6 +2,7 @@
 using BethanysPieShopHRM.Shared;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace BethanysPieShopHRM.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -9,10 +10,12 @@ namespace BethanysPieShopHRM.Api.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
+        
 
         public EmployeeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
+            
         }
 
         [HttpGet]
@@ -84,5 +87,6 @@ namespace BethanysPieShopHRM.Api.Controllers
 
             return NoContent();//success
         }
+
     }
 }

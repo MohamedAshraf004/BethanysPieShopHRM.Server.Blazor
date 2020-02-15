@@ -5,6 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200214143955_AddSomeValidationAndSeed.cs" />
+    <Compile Remove="Migrations\20200214143955_AddSomeValidationAndSeed.Designer.cs" />
+    <Compile Remove="Migrations\20200214144404_AddValidationAndSeed.cs" />
+    <Compile Remove="Migrations\20200214144404_AddValidationAndSeed.Designer.cs" />
+    <Compile Remove="Migrations\20200214144540_AddValidationAndSeed1.cs" />
+    <Compile Remove="Migrations\20200214144540_AddValidationAndSeed1.Designer.cs" />
+    <Compile Remove="Migrations\20200214145137_AddValidationAndSeed.cs" />
+    <Compile Remove="Migrations\20200214145137_AddValidationAndSeed.Designer.cs" />
+    <Compile Remove="Migrations\20200214145304_AddValidationAndSeed1.cs" />
+    <Compile Remove="Migrations\20200214145304_AddValidationAndSeed1.Designer.cs" />
+    <Compile Remove="Migrations\20200214145413_AddValidationAndSeed2.cs" />
+    <Compile Remove="Migrations\20200214145413_AddValidationAndSeed2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">

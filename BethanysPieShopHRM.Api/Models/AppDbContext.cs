@@ -29,8 +29,9 @@ namespace BethanysPieShopHRM.Api.Models
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 7, Name = "UK" });
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 8, Name = "France" });
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 9, Name = "Brazil" });
+            modelBuilder.Entity<Country>().HasData(new Country { CountryId = 10, Name = "Egypt" });
 
-            modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 1, JobCategoryName = "Pie research" });
+            modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 1, JobCategoryName = "None" });
             modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 2, JobCategoryName = "Sales" });
             modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 3, JobCategoryName = "Management" });
             modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 4, JobCategoryName = "Store staff" });
@@ -39,10 +40,12 @@ namespace BethanysPieShopHRM.Api.Models
             modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 7, JobCategoryName = "IT" });
             modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 8, JobCategoryName = "Cleaning" });
             modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 9, JobCategoryName = "Bakery" });
+            modelBuilder.Entity<JobCategory>().HasData(new JobCategory() { JobCategoryId = 10, JobCategoryName = "Pie research" });
+
 
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
-                EmployeeId = 1,
+                EmployeeId = 4,
                 CountryId = 1,
                 MaritalStatus = MaritalStatus.Single,
                 BirthDate = new DateTime(1979, 1, 16),
@@ -55,7 +58,7 @@ namespace BethanysPieShopHRM.Api.Models
                 Smoker = false,
                 Street = "Grote Markt 1",
                 Zip = "1000",
-                JobCategoryId = 1,
+                JobCategoryId = 5,
                 Comment = "Lorem Ipsum",
                 ExitDate = null,
                 JoinedDate = new DateTime(2015, 3, 1),
@@ -78,7 +81,29 @@ namespace BethanysPieShopHRM.Api.Models
                 Smoker = false,
                 Street = "New Street",
                 Zip = "2000",
-                JobCategoryId = 1,
+                JobCategoryId =3,
+                Comment = "Lorem Ipsum",
+                ExitDate = null,
+                JoinedDate = new DateTime(2017, 12, 24),
+                Latitude = 50.8503,
+                Longitude = 4.3517
+            });
+            modelBuilder.Entity<Employee>().HasData(new Employee
+            {
+                CountryId = 5,
+                MaritalStatus = MaritalStatus.Married,
+                BirthDate = new DateTime(1997, 11, 18),
+                City = "Antwerp",
+                Email = "Moh@bethanyspieshop.com",
+                EmployeeId = 12,
+                FirstName = "Moh",
+                LastName = "Ash",
+                Gender = Gender.Male,
+                PhoneNumber = "33999909923",
+                Smoker = false,
+                Street = "New Street",
+                Zip = "2000",
+                JobCategoryId = 2,
                 Comment = "Lorem Ipsum",
                 ExitDate = null,
                 JoinedDate = new DateTime(2017, 12, 24),

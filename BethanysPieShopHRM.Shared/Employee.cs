@@ -22,7 +22,10 @@ namespace BethanysPieShopHRM.Shared
 		public string Street { get; set; }
 		public string Zip { get; set; }
 		public string City { get; set; }
+		
 		public int CountryId { get; set; }
+		
+
 		public Country Country { get; set; }
 		public string PhoneNumber { get; set; }
 		public bool Smoker { get; set; }
@@ -32,7 +35,7 @@ namespace BethanysPieShopHRM.Shared
 		public string Comment { get; set; }
 		public DateTime? JoinedDate { get; set; }
 		public DateTime? ExitDate { get; set; }
-
+		[Required]
 		public int JobCategoryId { get; set; }
 		public JobCategory JobCategory { get; set; }
 

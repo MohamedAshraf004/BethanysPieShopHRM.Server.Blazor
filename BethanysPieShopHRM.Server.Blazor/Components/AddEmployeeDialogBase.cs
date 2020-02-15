@@ -11,7 +11,7 @@ namespace BethanysPieShopHRM.Server.Blazor.Components
     public class AddEmployeeDialogBase : ComponentBase
     {
         [Inject]
-        public IEmployeeDataService employeeDataService { get; set; }
+        public IEmployeeDataService EmployeeDataService { get; set; }
         [Inject]
         public IJobCategoryDataService JobCategoryDataService { get; set; }
         [Parameter]
@@ -52,7 +52,7 @@ namespace BethanysPieShopHRM.Server.Blazor.Components
         protected async Task HandleValidSubmit()
         {
             Employee.JobCategoryId = int.Parse(JobCategoryId);
-            await employeeDataService.AddEmployee(Employee);
+            await EmployeeDataService.AddEmployee(Employee);
             await CloseEventCallback.InvokeAsync(true);
             ShowDialog = false;
             StateHasChanged();
