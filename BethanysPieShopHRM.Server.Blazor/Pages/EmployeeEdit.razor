@@ -18,7 +18,6 @@
             <DataAnnotationsValidator />
             <ValidationSummary />
 
-
             <div class="form-group row">
                 <label for="firstName" class="col-sm-3">First name: </label>
                 <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@Employee.FirstName" placeholder="Enter first name"></InputText>
@@ -34,7 +33,6 @@
             <div class="form-group row">
                 <label for="birthdate" class="col-sm-3">Birthdate: </label>
                 <InputDate id="birthdate" class="form-control col-sm-8" @bind-Value="@Employee.BirthDate" placeholder="Enter birthdate"></InputDate>
-
             </div>
             <div class="form-group row">
                 <label for="email" class="col-sm-3">Email: </label>
@@ -67,6 +65,8 @@
                         {
                         <option value="@country.CountryId">@country.Name</option>
                         }
+                    /**/
+                    /**/
                     /**/
                 </InputSelect>
 
@@ -101,6 +101,8 @@
                         {
                         <option value="@jobCategory.JobCategoryId">@jobCategory.JobCategoryName</option>
                         }
+                    /**/
+                    /**/
                     /**/
                 </InputSelect>
             </div>

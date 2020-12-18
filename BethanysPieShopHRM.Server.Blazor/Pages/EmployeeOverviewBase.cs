@@ -15,11 +15,12 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 		public IEmployeeDataService EmployeeDataService{ get; set; }
         public IEnumerable<Employee> Employees { get; set; }
 
-        public AddEmployeeDialogBase AddEmployeeDialog { get; set; }
+        
         protected override async Task OnInitializedAsync()
 		{
 			Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
 		}
+        public AddEmployeeDialogBase AddEmployeeDialog { get; set; }
         protected void QuickAddEmployee()
         {
             AddEmployeeDialog.Show();

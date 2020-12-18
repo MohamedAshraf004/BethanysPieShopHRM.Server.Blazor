@@ -24,7 +24,7 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
             MapMarkers = new List<Marker>
             {
                 new Marker{Description = $"{Employee.FirstName} {Employee.LastName}",
-                                    ShowPopup = false, X = Employee.Longitude, Y = Employee.Latitude}
+                                    ShowPopup = true, X = Employee.Longitude, Y = Employee.Latitude}
             };
         }
     }

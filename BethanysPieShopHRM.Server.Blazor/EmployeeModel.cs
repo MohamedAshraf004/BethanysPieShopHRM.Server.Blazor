@@ -1,10 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BethanysPieShopHRM.Shared;
+using Microsoft.AspNetCore.Http;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace BethanysPieShopHRM.Shared
+namespace BethanysPieShopHRM.Server.Blazor
 {
-    public class Employee
+    public class EmployeeModel
     {
 		public int EmployeeId { get; set; }
 		[Required]
@@ -23,9 +28,9 @@ namespace BethanysPieShopHRM.Shared
 		public string Street { get; set; }
 		public string Zip { get; set; }
 		public string City { get; set; }
-		
+
 		public int CountryId { get; set; }
-		
+
 
 		public Country Country { get; set; }
 		public string PhoneNumber { get; set; }
@@ -42,5 +47,7 @@ namespace BethanysPieShopHRM.Shared
 
 		public double Latitude { get; set; }
 		public double Longitude { get; set; }
+
+		public IFormFile Image { get; set; }
 	}
 }

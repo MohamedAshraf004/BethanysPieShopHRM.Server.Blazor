@@ -49,6 +49,7 @@ namespace BethanysPieShopHRM.Server.Blazor.Services
                 new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json");
 
             await _httpClient.PutAsync("api/employee", employeeJson);
+
         }
 
         public async Task DeleteEmployee(int employeeId)

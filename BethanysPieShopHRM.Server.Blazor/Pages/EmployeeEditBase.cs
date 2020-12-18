@@ -1,6 +1,7 @@
 ﻿using BethanysPieShopHRM.Server.Blazor.Services;
 using BethanysPieShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,10 +60,10 @@ namespace BethanysPieShopHRM.Server.Blazor.Pages
 			Saved = false;
 			Employee.CountryId = int.Parse(CountryId);
 			Employee.JobCategoryId = int.Parse(JobCategoryId);
-			if(Employee.EmployeeId == 0)
+			if (Employee.EmployeeId == 0)
 			{
 				var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
-				if(addedEmployee != null)
+				if (addedEmployee != null)
 				{
 					StatusClass = "alert-success";
 					Message = "New employee added successfully.";
